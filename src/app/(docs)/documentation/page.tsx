@@ -5,6 +5,8 @@ import Heading1 from "@/components/ui/Heading1";
 import Paragraph from "@/components/ui/Paragraph";
 import DocsTab from "@/components/DocsTab";
 
+import "simplebar-react/dist/simplebar.min.css";
+
 export const metadata: Metadata = {
     title: "API Server | Documentation",
     description: "Open-source API usable by everyone",
