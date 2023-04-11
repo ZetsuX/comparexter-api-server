@@ -25,7 +25,7 @@ module.exports = {
                 sans: ["var(--font-inter)", ...fontFamily.sans],
             },
 
-            color: {
+            colors: {
                 ...colors,
                 "light-primary": "#f5bc51",
                 "dark-primary": "#533519",
