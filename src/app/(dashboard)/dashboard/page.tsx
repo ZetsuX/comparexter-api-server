@@ -19,13 +19,18 @@ const page = async () => {
         return notFound();
     }
 
-    const apiKey = await db.APIKey.findFirst({
+    const apiKey = await db.aPIKey.findFirst({
         where: { userId: user.user.id, enabled: true },
     });
 
     return (
         <div className="max-w-7xl mx-auto mt-16">
-            {apiKey ? <APIDashboard /> : <APIKeyRequest />}
+            {apiKey ? (
+                // @ts-expect-error Server Component
+                <APIDashboard />
+            ) : (
+                <APIKeyRequest />
+            )}
         </div>
     );
 };
