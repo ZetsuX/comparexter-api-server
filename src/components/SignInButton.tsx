@@ -11,11 +11,11 @@ const SignInButton: FC<SignInButtonProps> = (props) => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const signInWithGoogle = async () => {
-        setIsLoading(true);
-
         try {
+            setIsLoading(true);
             await signIn("google");
         } catch (err) {
+            console.log(err);
             toast({
                 title: "Failed to sign in",
                 message: "Please try again later",
