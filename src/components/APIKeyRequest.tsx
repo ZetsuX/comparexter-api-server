@@ -46,37 +46,40 @@ const APIKeyRequest: FC = () => {
         <div className="container md:max-w-2xl">
             <div className="flex flex-col gap-6 items-center">
                 <Key className="mx-auto h-12 w-12 text-gray-400" />
-                <Heading1>Request an API Key</Heading1>
+                <Heading1 className="text-center">
+                    Request your API key
+                </Heading1>
                 <Paragraph>
-                    You haven&apos;t requested any API Key yet..
+                    You haven&apos;t requested any API Key yet.
                 </Paragraph>
-
-                <form
-                    onSubmit={createNewApiKey}
-                    className="mt-6 sm:flex sm:items-center"
-                    action="#"
-                >
-                    <div className="relative rounded-md shadow-dn sm:min-w-0 sm:flex-1">
-                        {apiKey ? (
-                            <CopyButton
-                                copyValue={apiKey}
-                                className="absolute inset-y-0 right-0 animate-in fade-in duration-300"
-                            />
-                        ) : null}
-                        <Input
-                            readOnly
-                            value={apiKey ?? ""}
-                            placeholder="Request an API Key!"
-                        />
-                    </div>
-
-                    <div className="mt-3 flex justify-center sm:mt-0 sm:ml-4 sm:flex-shrink-0">
-                        <Button disabled={!!apiKey} isLoading={isCreating}>
-                            Request Key
-                        </Button>
-                    </div>
-                </form>
             </div>
+            <form
+                onSubmit={createNewApiKey}
+                className="mt-6 sm:flex sm:items-center"
+                action="#"
+            >
+                <label htmlFor="emails" className="sr-only">
+                    Your API key
+                </label>
+                <div className="relative rounded-md shadow-sm sm:min-w-0 sm:flex-1">
+                    {apiKey ? (
+                        <CopyButton
+                            className="absolute inset-y-0 right-0 animate-in fade-in duration-300"
+                            copyValue={apiKey}
+                        />
+                    ) : null}
+                    <Input
+                        readOnly
+                        value={apiKey ?? ""}
+                        placeholder="Request an API key for it to be displayed.."
+                    />
+                </div>
+                <div className="mt-6 flex justify-center sm:mt-0 sm:ml-4 sm:flex-shrink-0">
+                    <Button disabled={!!apiKey} isLoading={isCreating}>
+                        Request Key
+                    </Button>
+                </div>
+            </form>
         </div>
     );
 };
