@@ -9,6 +9,7 @@ import Paragraph from "@/ui/Paragraph";
 import { Input } from "@/ui/Input";
 import CopyButton from "@/components/CopyButton";
 import Table from "@/ui/Table";
+import APIKeyOptions from "@/ui/APIKeyOptions";
 
 const APIDashboard = async () => {
     const user = await getServerSession(authOptions);
@@ -46,13 +47,14 @@ const APIDashboard = async () => {
                 <Paragraph>Your Active API key: </Paragraph>
                 <div className="border-2 border-slate-400 dark:border-slate-500 rounded-lg relative">
                     <Input
-                        className="border-none w-fit truncate pr-12"
+                        className="border-none w-fit truncate pr-14"
                         readOnly
                         value={activeApiKey.key}
                     />
-                    <CopyButton
+                    <APIKeyOptions
                         className="absolute inset-y-0 right-0 bg-slate-300 dark:bg-slate-700"
-                        copyValue={activeApiKey.key}
+                        apiKeyID={activeApiKey.id}
+                        apiKeyText={activeApiKey.key}
                     />
                 </div>
             </div>

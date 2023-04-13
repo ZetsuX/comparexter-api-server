@@ -1,63 +1,59 @@
+import { withMethods } from "@/lib/api-middleware/with-methods";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { CreateAPIData } from "@/types/api";
+import { RevokeAPIData } from "@/types/api";
+import { error } from "console";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { nanoid } from "nanoid";
 import { z } from "zod";
-import { withMethods } from "@/lib/api-middleware/with-methods";
 
 const handler = async (
     req: NextApiRequest,
-    res: NextApiResponse<CreateAPIData>
+    res: NextApiResponse<RevokeAPIData>
 ) => {
     try {
         const user = await getServerSession(req, res, authOptions).then(
             (res) => res?.user
         );
-
         if (!user) {
             return res.status(401).json({
                 error: "Action unauthorized",
-                createdApiKey: null,
+                success: false,
             });
         }
 
-        const foundApiKey = await db.aPIKey.findFirst({
+        const validApiKey = await db.aPIKey.findFirst({
             where: { userId: user.id, enabled: true },
         });
-
-        if (foundApiKey) {
-            return res.status(400).json({
-                error: "You already have a valid API Key",
-                createdApiKey: null,
+        if (!validApiKey) {
+            return res.status(500).json({
+                error: "API Key cannot be revoked",
+                success: false,
             });
         }
 
-        const createdApiKey = await db.aPIKey.create({
-            data: {
-                userId: user.id,
-                key: nanoid(),
-            },
+        await db.aPIKey.update({
+            where: { id: validApiKey.id },
+            data: { enabled: false },
         });
 
         return res.status(200).json({
             error: null,
-            createdApiKey,
+            success: true,
         });
     } catch (err) {
         if (err instanceof z.ZodError) {
             return res.status(400).json({
                 error: err.issues,
-                createdApiKey: null,
+                success: false,
             });
         }
 
         return res.status(500).json({
             error: "Something went wrong",
-            createdApiKey: null,
+            success: false,
         });
     }
 };
 
-export default withMethods(["GET"], handler);
+export default withMethods(["POST"], handler);
