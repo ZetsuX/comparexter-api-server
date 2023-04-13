@@ -8,6 +8,7 @@ import Heading1 from "@/ui/Heading1";
 import Paragraph from "@/ui/Paragraph";
 import { Input } from "@/ui/Input";
 import CopyButton from "@/components/CopyButton";
+import Table from "@/ui/Table";
 
 const APIDashboard = async () => {
     const user = await getServerSession(authOptions);
@@ -45,7 +46,7 @@ const APIDashboard = async () => {
                 <Paragraph>Your Active API key: </Paragraph>
                 <div className="border-2 border-slate-400 dark:border-slate-500 rounded-lg relative">
                     <Input
-                        className="border-none w-fit truncate pr-10"
+                        className="border-none w-fit truncate pr-12"
                         readOnly
                         value={activeApiKey.key}
                     />
@@ -59,6 +60,8 @@ const APIDashboard = async () => {
             <Paragraph className="text-center md:text-left mt-4 -mb-4">
                 Your API Key History:
             </Paragraph>
+
+            <Table userRequests={serializeableRequest} />
         </div>
     );
 };
