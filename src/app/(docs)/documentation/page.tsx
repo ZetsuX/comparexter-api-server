@@ -8,7 +8,7 @@ import DocsTab from "@/components/DocsTab";
 import "simplebar-react/dist/simplebar.min.css";
 
 export const metadata: Metadata = {
-    title: "API Server | Documentation",
+    title: "Ze API Server | Documentation",
     description: "Open-source API usable by everyone",
 };
 

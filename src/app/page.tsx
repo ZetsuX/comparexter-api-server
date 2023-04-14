@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-    title: "API Server | Home",
+    title: "Ze API Server | Home",
     description: "Open-source API usable by everyone",
 };
 

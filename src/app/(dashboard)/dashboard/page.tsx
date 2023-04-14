@@ -8,7 +8,7 @@ import APIDashboard from "@/components/APIDashboard";
 import APIKeyRequest from "@/components/APIKeyRequest";
 
 export const metadata: Metadata = {
-    title: "API Server | Dashboard",
+    title: "Ze API Server | Dashboard",
     description: "Open-source API usable by everyone",
 };
 

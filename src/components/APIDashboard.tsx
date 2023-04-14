@@ -60,7 +60,7 @@ const APIDashboard = async () => {
             </div>
 
             <Paragraph className="text-center md:text-left mt-4 -mb-4">
-                Your API Key History:
+                Your API Usage History:
             </Paragraph>
 
             <Table userRequests={serializeableRequest} />

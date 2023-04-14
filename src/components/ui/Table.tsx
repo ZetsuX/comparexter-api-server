@@ -32,8 +32,8 @@ const initialCols: GridColDef[] = [
 
     {
         field: "col3",
-        headerName: "Recency",
-        width: 250,
+        headerName: "Status",
+        width: 190,
     },
 
     {
@@ -44,8 +44,8 @@ const initialCols: GridColDef[] = [
 
     {
         field: "col5",
-        headerName: "Status",
-        width: 190,
+        headerName: "Recency",
+        width: 250,
     },
 ];
 
@@ -83,9 +83,9 @@ const Table: FC<TableProps> = ({ userRequests }) => {
         id: req.id,
         col1: req.usedApiKey,
         col2: req.path,
-        col3: `${req.timestamp} ago..`,
+        col3: req.status,
         col4: `${req.duration} ms`,
-        col5: req.status,
+        col5: `${req.timestamp} ago..`,
     }));
 
     return (
