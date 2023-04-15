@@ -8,8 +8,11 @@ import DocsTab from "@/components/DocsTab";
 import "simplebar-react/dist/simplebar.min.css";
 
 export const metadata: Metadata = {
-    title: "Ze API Server | Documentation",
-    description: "Open-source API usable by everyone",
+    title: "Comparexter API | Documentation",
+    description: "Open-source Text Comparison API for everyone",
+    icons: {
+        icon: "/favicon.png",
+    },
 };
 
 const page: FC = () => {
@@ -17,7 +20,7 @@ const page: FC = () => {
         <div className="container max-w-7xl mx-auto mt-12">
             <div className="flex flex-col items-center gap-6">
                 <Heading1>Creating a request</Heading1>
-                <Paragraph>api/v1/apiserver</Paragraph>
+                <Paragraph>api/v1/comparator</Paragraph>
 
                 <DocsTab />
             </div>

@@ -8,8 +8,11 @@ import APIDashboard from "@/components/APIDashboard";
 import APIKeyRequest from "@/components/APIKeyRequest";
 
 export const metadata: Metadata = {
-    title: "Ze API Server | Dashboard",
-    description: "Open-source API usable by everyone",
+    title: "Comparexter API | Dashboard",
+    description: "Open-source Text Comparison API for everyone",
+    icons: {
+        icon: "/favicon.png",
+    },
 };
 
 const page = async () => {

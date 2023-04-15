@@ -3,8 +3,17 @@ import UserAuthForm from "@/components/UserAuthForm";
 import { btVariants } from "@/components/ui/Button";
 import Heading1 from "@/components/ui/Heading1";
 import Paragraph from "@/components/ui/Paragraph";
+import { Metadata } from "next";
 import Link from "next/link";
 import React, { FC } from "react";
+
+export const metadata: Metadata = {
+    title: "Comparexter API | Login",
+    description: "Open-source Text Comparison API for everyone",
+    icons: {
+        icon: "/favicon.png",
+    },
+};
 
 const page: FC = (props) => {
     return (

@@ -1,7 +1,7 @@
 export const jsCode = `const axios = require("axios");
 const options = {
     method: 'POST',
-    url: 'https://apiserver.com/api/v1/similarity',
+    url: 'https://comparexter.vercel.app/api/v1/comparator',
     params: {
       text1: 'First text',
       text2: 'Second text'
@@ -18,7 +18,7 @@ axios.request(options).then(function (response) {
 });`;
 
 export const pyCode = `import requests
-url = 'https://apiserver.com/api/v1/similarity'
+url = 'https://comparexter.vercel.app/api/v1/comparator'
 api_key = 'YOUR_API_KEY'
 text1 = 'First text'
 text2 = 'Second text'

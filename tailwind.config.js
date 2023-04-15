@@ -27,8 +27,8 @@ module.exports = {
 
             colors: {
                 ...colors,
-                "light-primary": "#FF2424",
-                "dark-primary": "#5F0000",
+                "light-primary": "#7DA0C9",
+                "dark-primary": "#093766",
             },
         },
     },

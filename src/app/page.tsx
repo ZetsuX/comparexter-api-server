@@ -5,8 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-    title: "Ze API Server | Home",
-    description: "Open-source API usable by everyone",
+    title: "Comparexter API | Home",
+    description: "Open-source Text Comparison API for everyone",
+    icons: {
+        icon: "/favicon.png",
+    },
 };
 
 export default function Home() {
@@ -18,12 +21,14 @@ export default function Home() {
                         size="lg"
                         className="three-d text-black dark:text-light-primary"
                     >
-                        Feel free to use our <br /> APIs for your needs
+                        Compare with ease,
+                        <br /> see all differences
                     </Heading1>
 
                     <Paragraph className="max-w-xl lg:text-left">
-                        With our APIs, you can achieve whatever your needs are
-                        by utilizing their features using a free{" "}
+                        Using Comparexter API, you are able to detect the
+                        differences that matter between two texts by using a
+                        free{" "}
                         <Link
                             href="/login"
                             className="underline underline-offset-2 text-black dark:text-light-primary"
@@ -40,7 +45,7 @@ export default function Home() {
                             quality={100}
                             style={{ objectFit: "contain" }}
                             fill
-                            src="/hmimage.png"
+                            src="/hmeimage.png"
                             alt="Home Image"
                         />
                     </div>
