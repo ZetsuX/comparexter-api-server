@@ -18,12 +18,12 @@ export default function Home() {
                         size="lg"
                         className="three-d text-black dark:text-light-primary"
                     >
-                        Feel free to use our <br /> API for your needs
+                        Feel free to use our <br /> APIs for your needs
                     </Heading1>
 
                     <Paragraph className="max-w-xl lg:text-left">
-                        With our API, you can do whatever this API can do and
-                        utilize it's features for your needs with a free{" "}
+                        With our APIs, you can achieve whatever your needs are
+                        by utilizing their features using a free{" "}
                         <Link
                             href="/login"
                             className="underline underline-offset-2 text-black dark:text-light-primary"
