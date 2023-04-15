@@ -36,11 +36,11 @@ export default function Home() {
                     <div className="relative w-full max-w-lg lg:max-w-3xl lg:left-1/2 aspect-square lg:absolute">
                         <Image
                             priority
-                            className="img-shadow"
+                            className="img-shadow scale-90"
                             quality={100}
                             style={{ objectFit: "contain" }}
                             fill
-                            src="/homeimage.png"
+                            src="/hmimage.png"
                             alt="Home Image"
                         />
                     </div>
